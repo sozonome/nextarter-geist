@@ -5,8 +5,15 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "next-sitemap --config next-sitemap.config.js",
     "start": "next start",
     "lint": "next lint",
+    "lint:fix": "eslint src --fix && yarn format",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write src",
+    "up-latest": "yarn upgrade-interactive --latest",
+    "release": "standard-version",
+    "push-release": "git push --follow-tags origin main",
     "prepare": "husky install"
   },
   "dependencies": {
